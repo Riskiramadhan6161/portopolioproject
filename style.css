@@ -1,0 +1,489 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Heebo', sans-serif; 
+    line-height: 1.5;
+    color: #1b1e3a; 
+    font-size: 16px; 
+}
+
+a {
+    text-decoration: none;
+    color: #21243D;
+    transition: color 0.3s;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    max-width: 860px; /* Sesuaikan dengan lebar konten efektif di Figma */
+    margin: 0 auto;
+    padding: 0 15px; /* Padding samping untuk ruang bernapas */
+}
+
+/* ======================== 1. HEADER dan NAVIGASI ======================== */
+.main-header {
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.main-nav ul {
+    display: flex;
+    justify-content: flex-end; 
+    gap: 30px;
+}
+
+.main-nav a {
+    font-weight: 500;
+    font-size: 20px; 
+}
+
+/* ======================== 2. HERO SECTION (CSS GRID) ======================== */
+
+.hero-section {
+    padding-top: 30px; 
+    padding-bottom: 70px; 
+    text-align: center; 
+}
+
+.hero-image img {
+    width: 150px; 
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+}
+
+.hero-text h1 {
+    font-size: 32px; 
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+.hero-text .description {
+    margin-bottom: 25px;
+}
+
+/* Tombol */
+.button.download{
+    background-color: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-top: 30px;
+}
+
+/* ======================== 3. RECENT POSTS (CSS GRID) ======================== */
+
+.recent-posts {
+    background-color: #EDF7FA; 
+    padding-top: 7px; 
+    padding-bottom: 30px;
+}
+
+.recent-posts .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.recent-posts h2 {
+    font-size: 22px;
+    font-weight: 400; 
+}
+
+.recent-posts .view-all {
+    color: #00A8CC; /* Warna biru */
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.posts-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 15px; 
+}
+
+.post-card {
+    background-color: white;
+    padding: 20px;
+    border-radius: 4px;
+}
+
+.post-card h3 a {
+    font-size: 26px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.post-card .meta {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+/* ======================== 4. FEATURED WORKS ======================== */
+
+.featured-works {
+    padding-top: 35px;
+    padding-bottom: 50px;
+}
+
+.featured-works h2 {
+    font-size: 22px;
+    font-weight: 400;
+    margin-bottom: 25px;
+}
+
+.work-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 15px 0;
+}
+
+.work-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 6px;
+}
+
+.work-details h3 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.work-details .tags {
+    margin-bottom: 15px;
+}
+
+.work-details .year {
+    background-color: #21243D;
+    color: white;
+    padding: 2px 10px;
+    border-radius: 16px;
+    font-weight: 900;
+    font-size: 18px;
+    margin-right: 15px;
+}
+
+.work-details .category {
+    color: #8695A4;
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #E0E0E0;
+    margin: 20px 0;
+}
+
+/* ======================== 5. FOOTER ======================== */
+.main-footer {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.social-links a {
+    font-size: 30px;
+    margin: 0 10px;
+    color: #21243D;
+}
+
+.copyright {
+    font-size: 14px;
+    margin-top: 25px;
+}
+
+/* ======================== 6. MEDIA QUERY (Responsif ke Desktop) ======================== */
+
+@media (min-width: 769px) {
+
+    .main-header {
+        padding-top: 60px; 
+    }
+    
+    .hero-section {
+        display: grid;
+        grid-template-columns: 1fr auto; 
+        gap: 100px;
+        align-items: center;
+        text-align: left; 
+        padding-top: 140px;
+        padding-bottom: 180px;
+    }
+
+    .hero-image {
+        order: 2; 
+    }
+
+    .hero-text {
+        order: 1; /* Pindah teks ke kolom pertama (kiri) */
+    }
+
+    .hero-image img {
+        width: 243px; /* Ukuran foto di desktop */
+        height: 243px;
+        margin-bottom: 0;
+    }
+
+    .hero-text h1 {
+        font-size: 44px; /* Ukuran H1 di desktop */
+    }
+
+    /* RECENT POSTS */
+    .recent-posts .view-all {
+        display: block; /* Munculkan "View all" di desktop */
+    }
+
+    /* Posts Grid menjadi 2 kolom */
+    .posts-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+    
+    /* FEATURED WORKS (CSS GRID untuk item) */
+    .work-item {
+        grid-template-columns: 246px 1fr; /* Gambar (lebar tetap) | Detail (sisanya) */
+        gap: 18px;
+    }
+
+}
+
+
+/* ======================== BLOG PAGE (OVERRIDE) ======================== */
+
+.blog-page-content {
+    padding-top: 40px; /* Sedikit lebih banyak padding atas */
+    padding-bottom: 50px;
+}
+
+/* Judul Halaman Blog */
+.blog-page-content h1 {
+    font-size: 30px; 
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+/* Gaya untuk setiap item artikel di daftar blog */
+.blog-article-item {
+    padding: 30px 0; /* Jarak atas dan bawah antar artikel */
+}
+
+/* Judul Artikel */
+.blog-article-item h2 a {
+    font-size: 26px; /* Ukuran font H2 di Mobile */
+    font-weight: 500; /* Font lebih ringan dari H1 */
+    color: #21243D;
+    display: block;
+    margin-bottom: 5px; /* Jarak antara judul dan meta info */
+}
+
+/* Meta info (Tanggal dan Kategori) */
+.blog-article-item .meta {
+    font-size: 20px; /* Ukuran font meta */
+    margin-bottom: 25px; /* Jarak antara meta info dan paragraf */
+}
+
+.blog-article-item .meta span:first-child {
+    margin-right: 20px;
+}
+
+.blog-article-item p {
+    line-height: 1.5;
+    margin-bottom: 0;
+}
+
+.article-list hr {
+    border: none;
+    border-top: 1px solid #E0E0E0;
+    margin: 0;
+}
+
+@media (min-width: 769px) {
+    .blog-page-content h1 {
+        font-size: 44px; 
+    }
+    
+    .blog-article-item h2 a {
+        font-size: 30px; 
+    }
+}
+
+/* ======================== 6. SINGLE WORK DETAIL (Sama seperti Single Blog) ======================== */
+
+.work-detail-header {
+    padding-top: 40px;
+    padding-bottom: 30px;
+}
+
+.work-detail-header h1 {
+    font-size: 34px; 
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 30px;
+}
+
+.work-detail-header .tags .year {
+    background-color: #FF7C7C; 
+    color: white;
+    padding: 2px 10px;
+    border-radius: 16px;
+    font-weight: 900;
+    font-size: 15px;
+    margin-right: 15px;
+    display: inline-block;
+}
+
+.work-detail-content p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+}
+
+.work-detail-content img {
+    width: 50%;
+    height: auto;
+    border-radius: 6px;
+    margin: 30px 0;
+}
+
+.work-detail-content h2 {
+    font-size: 30px;
+    font-weight: 700;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+
+/* ======================== 8. MEDIA QUERY (Responsif ke Desktop) ======================== */
+@media (min-width: 769px) {
+    
+    .work-detail-header h1 {
+        font-size: 42px; 
+    }
+}
+
+.contact-page-content {
+    padding-top: 50px;
+    padding-bottom: 80px;
+}
+
+.contact-page-content h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.contact-intro {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #21243D;
+}
+
+/* QUICK CONTACT INFO */
+.quick-contact {
+    margin-bottom: 40px;
+}
+
+.quick-contact h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #E0E0E0; /* Garis pemisah */
+    padding-bottom: 10px;
+}
+
+.quick-contact p {
+    font-size: 16px;
+    margin-bottom: 10px;
+    display: flex; /* Untuk menyelaraskan ikon dan teks */
+    align-items: center;
+}
+
+.quick-contact i {
+    color: #FF7C7C; 
+    margin-right: 15px;
+    width: 20px;
+    text-align: center;
+}
+
+
+/* CONTACT FORM STYLES */
+.contact-form h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+    border-bottom: 2px solid #E0E0E0; 
+    padding-bottom: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block; 
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #21243D;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #E0E0E0;
+    border-radius: 4px;
+    box-sizing: border-box; 
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.contact-form textarea {
+    resize: vertical; 
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #FF7C7C; 
+    outline: none;
+}
+
+.contact-form button.btn-primary {
+    background-color: #FF7C7C;
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%; /* Lebar penuh di mobile */
+}
+
+.contact-form button.btn-primary:hover {
+    background-color: #E66A6A;
+}
+
+/* Media Query untuk Desktop */
+@media (min-width: 769px) {
+    .contact-form button.btn-primary {
+        width: auto; 
+        padding: 12px 40px;
+    }
+    .contact-page-content h1 {
+        font-size: 44px; 
+    }
+}
